@@ -1,0 +1,262 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+.text-brand {
+  color: #fff !important;
+}
+@font-face {
+	font-family: 'P22-Book';
+	src:url('../fonts/P22Underground-Book.otf');
+}
+@font-face {
+	font-family: 'P22-Heavy';
+	src:url('../fonts/P22Underground-Heavy.otf');
+}
+@font-face {
+	font-family: 'P22-Demi';
+	src:url('../fonts/P22Underground-Demi.otf');
+}
+@font-face {
+	font-family: 'P22-Light';
+	src:url('../fonts/P22Underground-Light.otf');
+}
+@font-face {
+	font-family: 'P22-Medium';
+	src:url('../fonts/P22Underground-Medium.otf');
+}
+@font-face {
+	font-family: 'P22-thin';
+	src:url('../fonts/P22Underground-Thin.otf');
+}
+@font-face {
+    font-family: 'Neutra-Bold';
+    src: url('../fonts/Neutra2Display-Bold.otf');
+}
+@font-face {
+    font-family: 'Neutra-Inline';
+    src: url('../fonts/Neutra2Display-Inline.otf');
+}
+@font-face {
+    font-family: 'Neutra-Light';
+    src: url('../fonts/Neutra2Display-Light.otf');
+}
+@font-face {
+    font-family: 'Neutra-Medium';
+    src: url('../fonts/Neutra2Display-Medium.otf');
+}
+@font-face {
+    font-family: 'Neutra-Thin';
+    src: url('../fonts/Neutra2Display-Thin.otf');
+}
+@font-face {
+    font-family: 'Neutra-Titling';
+    src: url('../fonts/Neutra2Display-Titling.otf');
+}
+@font-face {
+    font-family: 'Neutra-BoldItalic';
+    src: url('../fonts/Neutra2Text-BoldItalic.otf');
+}
+@font-face {
+    font-family: 'Neutra-Bold';
+    src: url('../fonts/Neutra2Text-Bold.otf');
+}
+@font-face {
+    font-family: 'Neutra-BookItalic';
+    src: url('../fonts/Neutra2Text-BookItalic.otf');
+}
+@font-face {
+    font-family: 'Neutra-Book';
+    src: url('../fonts/Neutra2Text-Book.otf');
+}
+@font-face {
+    font-family: 'Neutra-DemiItalic';
+    src: url('../fonts/Neutra2Text-DemiItalic.otf');
+}
+@font-face {
+    font-family: 'Neutra-Demi';
+    src: url('../fonts/Neutra2Text-Demi.otf');
+}
+@font-face {
+    font-family: 'Neutra-LightItalic';
+    src: url('../fonts/Neutra2Text-LightItalic.otf');
+}
+@font-face {
+    font-family: 'Neutra-Light';
+    src: url('../fonts/Neutra2Text-Light.otf');
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "P22-Book", Helvetica, Arial, sans-serif!important;
+}
+
+.text-title-p22 {
+    font-family: "P22-Book", Helvetica, Arial, sans-serif!important;
+}
+
+section {
+    padding: 30px 0;
+}
+.nopadding {
+    padding: 0px 0;
+}
+.text-paragraph {
+    font-family: "P22-Book", Helvetica, Arial, sans-serif!important;
+}
+.text-bold {
+    font-family: "P22-Medium", Helvetica, Arial, sans-serif!important;
+    font-size: 17pt;
+}
+
+.overlay .v-align-transform {
+  position: relative;
+  transform: translate3d(0, -40%, 0);
+  -webkit-transform: translate3d(0, -40%, 0);
+  top: 40%;
+  z-index: 2;
+}
+.twitter-feed {
+    height: 415px !important;
+}
+.text-novedades {
+    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+}
+.rainbow:before {
+        content: '';
+    height: 7px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background: linear-gradient(to right,  #a41648 0%,#a41648 25%,#88c3ad 25%,#88c3ad 50%,#f2f5ce 50%,#f2f5ce 75%,#dc3126 75%); /* W3C */
+    background: #a41648; /* Old browsers */
+    background: -moz-linear-gradient(left, #a41648 0%, #a41648 25%, #88c3ad 25%, #88c3ad 50%, #f2f5ce 50%, #f2f5ce 75%, #dc3126 75%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a41648), color-stop(25%,#a41648), color-stop(25%,#88c3ad), color-stop(50%,#88c3ad), color-stop(50%,#f2f5ce), color-stop(75%,#f2f5ce), color-stop(75%,#f2f5ce)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #a41648 0%, #a41648 25%, #88c3ad 25%, #88c3ad 50%, #f2f5ce 50%, #f2f5ce 75%, #dc3126 75%);
+    background: -o-linear-gradientlinear-gradient(left, #a41648 0%, #a41648 25%, #88c3ad 25%, #88c3ad 50%, #f2f5ce 50%, #f2f5ce 75%, #dc3126 75%);
+    background: -ms-linear-gradientlinear-gradient(left, #a41648 0%, #a41648 25%, #88c3ad 25%, #88c3ad 50%, #f2f5ce 50%, #f2f5ce 75%, #dc3126 75%);
+    background-size: 100% 7px;
+}
+.sc-background-orange {
+    padding-bottom: 0px; 
+    border-bottom-color: #5db49b !important;
+}
+#contacto {
+    height: 890px !important;
+}
+.image-square .image {
+  height: 890px !important;
+}
+.image-square .superinformation {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+}
+
+
+@media all and (max-width: 990px) {
+  .image-square .superinformation {
+    position: relative;
+    top: 0;
+    transform: none;
+    -webkit-transform: none;
+    padding: 0 20%;
+  }
+}
+@media all and (max-width: 767px) {
+  .image-square .superinformation {
+    padding: 0 15px;
+  }
+}
+
+
+
+#contacto  .map-holder{
+    background-color: #12100f;
+    height: 890px;
+}
+.row.information .info-title {
+    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+}
+.row.information .info-paragraph {
+    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    font-size: 10pt;
+}
+
+.row.information {
+    padding-top: 80px;
+    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    background-color: #dc6d1f;
+    height: 445px;
+    color: #ffffff;
+}
+
+#contacto  .address {
+    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    background-color: #ffffff;
+    height: 445px;
+}
+.flex-active-slide {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.color-twit {
+  color: #162437 !important;
+}
+.menu li a {
+    font-family: "P22-Heavy", Helvetica, Arial, sans-serif!important;
+    font-size: 11;
+    color: #FFF;
+}
+.title-footer {
+    font-family: "P22-Heavy", Helvetica, Arial, sans-serif!important;
+    font-size: 17pt;
+    font-color: #ffffff;
+    color: #fff;
+}
+#novedades {
+    min-height: 700px;
+}
+section.ilite {
+    background-color: #5db49b;
+    color: #fff;
+}
+.tab-title {
+    border-bottom-style: solid; 
+    border-bottom-width: 0.1em;
+}
+li:nth-child(1) > .tab-title {
+    border-bottom-color: #bbb2a8;
+}
+li:nth-child(2) > .tab-title {
+    border-bottom-color: #57c5d5;
+}
+li:nth-child(3) > .tab-title {
+    border-bottom-color: #9c4321;
+}
+li:nth-child(4) > .tab-title {
+    border-bottom-color: #5a66a5;
+}
+.tweets-feed {
+    color: #fff;
+}
+h2,
+p.lead.text-novedadess,
+section {
+    color: #162437;
+}

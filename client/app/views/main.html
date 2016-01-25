@@ -1,0 +1,401 @@
+        <div class="nav-container">
+            <a id="top"></a>
+            <nav>
+                <div class="nav-utility">
+                    <div class="module left">
+                        <i class="ti-location-arrow">&nbsp;</i>
+                        <a class="inner-link" href="#contacto">
+                            <span class="sub">Av. Alicia Moreau de Justo 1300, Puerto Madero</span>
+                        </a>
+                    </div>
+                    <div class="module left">
+                        <i class="ti-email">&nbsp;</i>
+                        <span class="sub"><a style="text-decoration: none;" href="mailto:pabellon.artes.uca@gmail.com">pabellon.artes.uca@gmail.com</a></span>
+                    </div>
+                    <div class="module right">
+                        <ul class="list-inline social-list mb24">
+                            <li>
+                                <a href="{{home.twitter_link}}" target="_blank">
+                                    <i class="ti-twitter-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{home.facebook_link}}" target="_blank">
+                                    <i class="ti-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{home.instagram_link}}" target="_blank">
+                                    <i class="ti-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-bar uppercase sc-background-orange">
+                    <div class="module left text-brand">
+                        PABELLON
+                    </div>
+                    <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+                        <i class="ti-menu"></i>
+                    </div>
+                    <div class="module-group right">
+                        <div class="module left">
+                            <ul class="menu">
+                                <li>
+                                    <a class="inner-link" href="#top">
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="inner-link" href="#exhibicion">
+                                        Exhibición
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="inner-link" href="#galeria">
+                                        Galería
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="inner-link" href="#contacto">
+                                        Contacto
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!--end of module group-->
+                </div>
+            </nav>
+        </div>
+        <div class="main-container">
+
+
+
+
+            <section class="cover fullscreen image-slider slider-all-controls controls-inside parallax">
+                <ul class="slides">
+                    <li class="overlay image-bg" ng-repeat="muestra in current_muestras">
+
+                        <div class="background-image-holder ">
+                            <img alt="image" class="background-image" ng-src="http://images.collab-dev.com/uca/{{muestra.main_picture}}" />
+                        </div>
+                        <div class="container v-align-transform">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-center">
+                                    <h2 class="mb0">{{muestra.name}}</h2>
+                                </div>
+                                <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 text-center">
+                                    <p class="text-justify mb0 text-paragraph">
+                                        {{muestra.slogan}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </section>
+
+            <section class="ilite">
+                <div class="container mt80">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <div class="countdown">PABELLON</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h4 class="mb16 color-primary">
+                                {{home.description}}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <!--end of container-->
+                <div class="container mb80">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-12 text-center">
+                            <div class="tabbed-content button-tabs">
+                                <ul class="tabs">
+                                    <li class="active">
+                                        <div class="tab-title">
+                                            <span class="hidden-sm hidden-xs">{{home.why_title}}</span>
+                                            <span class="visible-sm visible-xs">{{home.why_title}}</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <p>
+                                                {{home.why_body}}
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tab-title">
+                                            <span class="hidden-sm hidden-xs">{{home.how_title}}</span>
+                                            <span class="visible-sm visible-xs">{{home.how_title}}</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <p>
+                                                {{home.how_body}}
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tab-title">
+                                            <span class="hidden-sm hidden-xs">{{home.what_title}}</span>
+                                            <span class="visible-sm visible-xs">{{home.what_title}}</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <p>
+                                                {{home.what_body}}
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tab-title">
+                                            <span class="hidden-sm hidden-xs">{{home.who_title}}</span>
+                                            <span class="visible-sm visible-xs">{{home.who_title}}</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <p>
+                                                {{home.who_body}}
+                                            </p>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                            <!--end of button tabs-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+
+            <section id="galeria" class="nopadding">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h2 class="mb16 color-primary text-title-p22">Lo Que Podrás Descubrir</h2>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="row nopadding">
+                        <div class="col-sm-12" style="padding-bottom: 0px; margin-bottom: 0px;">
+                            <div class="image-slider slider-all-controls controls-inside p0" style="padding-bottom: 0px; margin-bottom: 0px;">
+                            </div>
+                            <!--end of image slider-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                <!--end of container-->
+            </section>
+
+
+           <section id="gallery-muestras" class="ilite mt0">
+                <div class="container">
+
+                    <div class="row masonry masonryFlyIn ">
+                        <div class="col-sm-4 image-tile inner-title hover-reveal text-center" ng-repeat="item_muestra in home.organizations" style="margin: 0px; padding: 0px;">
+                            <a href="#" style="margin: 0px; padding: 0px;">
+                                <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/x300/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;"/>
+                                <div class="title">
+                                    <h5 class="uppercase mb0">{{item_muestra.name}}</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
+
+           <section id="twitter-feed" class="ilite mt0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 text-center pt72">
+                            <div class="pt88">	
+                                <i class="ti-twitter-alt icon icon color-twit"></i>
+                                <br/>
+                                <div class="twitter-feed tweets-slider large">
+                                    <div class="tweets-feed" data-widget-id="{{home.twitter_hashtag}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+            </section>
+
+            <section id="novedades">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h2 class="uppercase mb16">#{{home.instagram_hashtag}}</h2>
+                            <p class="lead mb64 uppercase text-novedades">
+                                Seguí las novedades
+                            </p>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="instafeedtag lightbox-grid square-thumbs" data-user-name="{{home.instagram_username}}">
+                                <ul></ul>
+                            </div>
+                            <!--end of lightbox gallery-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+
+
+
+            <section class="visible-sm visible-xs">
+
+                <div class="superinformation col-sm-12 col-xs-12">
+
+                        <div class="row information" style="">
+                            <div class="col-md-8 col-md-offset-2 v-align-transform" >
+                                <h4 class="uppercase info-title" style="color: #ffffff; font-family: P22-thin; font-size: 24pt; ">Conocé más</h4>
+                                <p class="info-paragraph">
+                                    {{home.details}}
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="row address" style="padding-top: 30px;">
+                            <div class="col-md-8 col-md-offset-2">
+                                <p>
+                                    Av. Alicia Moreau de Justo 1300, UCA
+                                    <br>
+                                    Puerto Madero, Buenos Aires,
+                                    <br>
+                                    Argentina
+                                </p>
+                                <p>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="contacto" class="image-square left">
+                <div class="col-md-6 p0 image col-sm-12 col-xs-12" > 
+                    <div class="map-holder background-image-holder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6826974889027!2d-58.36602088280991!3d-34.61218427990593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352a0053efe1%3A0xf289dbcc30ef33ca!2sAv.+Alicia+Moreau+de+Justo+1300%2C+C1107AFB+CABA!5e0!3m2!1ses!2sar!4v1435780990552" width="600" height="890" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="superinformation col-md-6 col-sm-12 col-xs-12 hidden-sm hidden-xs" >
+
+                        <div class="row information" style="">
+                            <div class="col-md-8 col-md-offset-2 v-align-transform" >
+                                <h4 class="uppercase info-title" style="color: #ffffff; font-family: P22-thin; font-size: 24pt; ">Conocé más</h4>
+                                <p class="info-paragraph">
+                                El Museum of the Bible existe para invitar a toda la gente a conectarse con la Biblia a través de exhibiciones en museos y programas educativos. Visitá nuestra página web y conocé más sobre las actividades que estamos desarrollando, incluyendo un museo de calidad internacional que será inaugurado en 2017 en Washington DC.
+                                </p>
+                            </div> 
+                        </div>
+                        <div class="row address" style="padding-top: 30px;">
+                            <div class="col-md-8 col-md-offset-2">
+                                <p>
+                                    Av. Alicia Moreau de Justo 1300, UCA
+                                    <br>
+                                    Puerto Madero, Buenos Aires,
+                                    <br>
+                                    Argentina
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <footer class="footer-1 bg-dark" ng-controller="footer-controller">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 uppercase title-footer">
+                            Los Destacados de la Green Collection
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget">
+
+                                <h6 class="title">Facebook Posts</h6>
+                                <hr>
+
+				<div class="fb-page" data-href="https://www.facebook.com/greencollectionargentina" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/greencollectionargentina"><a href="https://www.facebook.com/greencollectionargentina">greencollectionargentina</a></blockquote></div></div>
+
+                            </div>
+                            <!--end of widget-->
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget">
+                                <h6 class="title">Latest Updates</h6>
+                                <hr>
+                                <div class="twitter-feed">
+                                    <div class="tweets-feed" data-widget-id="616638488482594817">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end of widget-->
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget">
+                                <h6 class="title">Instagram</h6>
+                                <hr>
+                                <div class="instafeed" data-user-name="PabellonArteUca">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                            <!--end of widget-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <span class="sub">&copy; Copyright 2015 - Medium Rare</span>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <ul class="list-inline social-list">
+                                <li>
+
+                                    <a href="https://twitter.com/GreenCollectARG" target="_blank">
+                                        <i class="ti-twitter-alt"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/greencollectionargentina" target="_blank">
+                                        <i class="ti-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://instagram.com/greencollectionargentina" target="_blank">
+                                        <i class="ti-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--end of container-->
+                <a class="btn btn-sm fade-half back-to-top inner-link" href="#top">Top</a>
+            </footer>
+
+        </div>
