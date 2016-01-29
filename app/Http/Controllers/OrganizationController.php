@@ -135,6 +135,7 @@ class OrganizationController extends Controller {
 	}
 
 	public function destroy($id) {
+        DB::table('organizations_medias')->where('organization_id', '=', $id)->delete();
         Organization::destroy($id);
 	}
 
@@ -164,6 +165,31 @@ class OrganizationController extends Controller {
 
         return $text;
     }
+
+	public function remark(Request $request, $id) {
+        $user = User::find($request['user']['sub']);
+        $organization = Organization::find($id);
+        DB::transaction(function() use ($request, $organization) {
+            $organization->remark = 1;
+            $organization->save();
+        });
+
+        return $organization;
+    }
+
+	public function unremark(Request $request, $id) {
+        $user = User::find($request['user']['sub']);
+        $organization = Organization::find($id);
+        DB::transaction(function() use ($request, $organization) {
+            $organization->remark = 0;
+            $organization->save();
+        });
+
+        return $organization;
+    }
+
+
+
 
 }
 

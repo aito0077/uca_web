@@ -28,7 +28,7 @@ class PageController extends Controller {
 	public function home() {
         $home = Page::where('is_home', '=', true)->firstOrFail();
         Log::info($home);
-        $organizations = DB::table('organizations')->where('remark', '=', 1)->select('id', 'name', 'main_picture', 'is_current', 'slogan', 'description', 'details', 'more_details', 'start_event_date', 'finish_event_date')->get();
+        $organizations = DB::table('organizations')->select('id', 'name', 'main_picture', 'is_current', 'remark', 'slogan', 'description', 'details', 'more_details', 'start_event_date', 'finish_event_date')->get();
         $home->organizations = $organizations;
 
         return $home;

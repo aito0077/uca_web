@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="nav-bar uppercase sc-background-orange">
-                    <div class="module left text-brand" style="padding-left: 45px; padding-top: 10px; padding-bottom: 10px">
+                    <div class="module logo left text-brand" style="padding-left: 45px; padding-top: 10px; padding-bottom: 5px">
                         <img src="img/logo_3.png" class="img-responsive" width="300px"/>
                     </div>
                     <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
@@ -179,19 +179,46 @@
                 <!--end of container-->
             </section>
 
-           <section id="gallery-muestras" class="ilite mt0">
-                <div class="container">
+           <section id="gallery-muestras" class="ilite mt0" style="margin: 0px; padding: 0px;">
+                <div class="container-flex">
+                    <div class="row masonry masonryFlyIn">
+                        <div class="col-md-4" style="margin: 0px; padding: 0px;">
+                            <div class="image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in remark_muestras" style="margin: 0px; padding: 0px;">
+                                <a ng-href="{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
+                                    <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/300x300/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;" class="img-responsive"/>
+                                    <div class="title">
+                                        <h5 class="muestra-thumb-title uppercase mb0">{{item_muestra.name}}</h5>
+                                        <p class="muestra-thum-details">{{item_muestra.more_details}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8" style="margin: 0px; padding: 0px;">
+                            <div class="col-sm-6 image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in unremark_muestras" style="margin: 0px; padding: 0px;">
+                                <a ng-href="{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
+                                    <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/400x250/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;" class="img-responsive"/>
+                                    <div class="title">
+                                        <h5 class="muestra-thumb-title uppercase mb0">{{item_muestra.name}}</h5>
+                                        <p class="muestra-thum-details">{{item_muestra.more_details}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="row masonry masonryFlyIn ">
-                        <div class="col-sm-4 image-tile inner-title hover-reveal text-center" ng-repeat="item_muestra in home.organizations" style="margin: 0px; padding: 0px;">
-                            <a href="#" style="margin: 0px; padding: 0px;">
+                    
+
+                    <!--div class="row masonry masonryFlyIn ">
+                        <div class="col-sm-4 image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in home.organizations" style="margin: 0px; padding: 0px;">
+                            <a ng-href="{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
                                 <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/x300/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;"/>
                                 <div class="title">
-                                    <h5 class="uppercase mb0">{{item_muestra.name}}</h5>
+                                    <h5 class="muestra-thumb-title uppercase mb0">{{item_muestra.name}}</h5>
+                                    <p class="muestra-thum-details">{{item_muestra.more_details}}</p>
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div-->
 
                 </div>
             </section>

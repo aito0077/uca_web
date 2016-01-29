@@ -1,4 +1,1 @@
-#	modified:   client/app/index.html
-#	modified:   client/app/styles-less/style.less
-#	modified:   client/app/views/main.html
-#	modified:   public/index.html
+app/Http/Controllers/OrganizationController.php app/Http/Controllers/PageController.php app/Http/routes.php client/app/css/custom.css client/app/scripts/controllers/main.js client/app/views/.main.html.swp client/app/views/main.html client/config.json database/seeds/RolesTableSeeder.php public/index.html public/views/main.html remove.leo public/css/main.d958d9f8.css public/scripts/scripts.f9e0550f.js

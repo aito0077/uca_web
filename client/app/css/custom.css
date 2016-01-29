@@ -260,3 +260,13 @@ p.lead.text-novedadess,
 section {
     color: #162437;
 }
+.inner-title.item-muestra .title {
+  bottom: 44px !important;
+}
+.inner-title.item-muestra h5 {
+    font-size: 19px;
+}
+
+.nav-bar .module.logo {
+    height: auto;
+}

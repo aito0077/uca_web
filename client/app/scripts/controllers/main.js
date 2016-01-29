@@ -405,6 +405,11 @@ angular.module('ucaApp')
 
 
 
+        $scope.getMuestraLink = function (muestra) {
+            return $sce.trustAsResourceUrl(muestra.website);
+        };
+
+
 
 
         $scope.getImageSrc = function (image_name, height, width) {
@@ -419,6 +424,8 @@ angular.module('ucaApp')
         ];
 
         $scope.current_muestras = [];
+        $scope.remark_muestras = [];
+        $scope.unremark_muestras = [];
 
         $http.get(api_host+'/api/pages/home').success(function(page) {
             $scope.home = page;
@@ -427,6 +434,11 @@ angular.module('ucaApp')
             _.each(data.organizations, function(item) {
                 if(item.is_current) {
                     $scope.current_muestras.push(item);
+                }
+                if(item.remark == 1) {
+                    $scope.remark_muestras.push(item);
+                } else {
+                    $scope.unremark_muestras.push(item);
                 }
             });
 

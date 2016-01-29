@@ -22,25 +22,11 @@ class RolesTableSeeder extends Seeder {
         $role->save();
 
         $role = new Role();
-        $role->name = 'create_center';
-        $role->description = 'Administrar Centros';
+        $role->name = 'crud_organization';
+        $role->description = 'Crear Muestras';
         $role->save();
 
         $role = new Role();
-        $role->name = 'create_organization';
-        $role->description = 'Crear Emprendimientos';
-        $role->save();
-
-        $role = new Role();
-        $role->name = 'edit_center';
-        $role->description = 'Editar Centro';
-        $role->save();
-
-        $role = new Role();
-        $role->name = 'crud_center_user';
-        $role->description = 'Administrar Participantes';
-        $role->save();
-
         $userRole = new UserRole();
         $userRole->user_id = 1;
         $userRole->role_id = 1;
@@ -62,21 +48,6 @@ class RolesTableSeeder extends Seeder {
         $userRole->role_id = 2;
         $userRole->save();
  
-        $userRole = new UserRole();
-        $userRole->user_id = 3;
-        $userRole->role_id = 4;
-        $userRole->save();
- 
-        $userRole = new UserRole();
-        $userRole->user_id = 3;
-        $userRole->role_id = 5;
-        $userRole->save();
-
-        $userRole = new UserRole();
-        $userRole->user_id = 3;
-        $userRole->role_id = 6;
-        $userRole->save();
-
 
      }
 

@@ -23,6 +23,8 @@ Route::post('api/media/upload', ['middleware' => 'auth', 'uses' => 'MediaControl
 Route::post('api/media/organization/{organizationId}/upload', ['middleware' => 'auth', 'uses' => 'MediaController@addOrganizationMedia']);
 Route::post('api/media/activity/{activityId}/upload', ['middleware' => 'auth', 'uses' => 'MediaController@addActivityMedia']);
 
+Route::post('api/organization/{id}/remark', ['uses' => 'OrganizationController@remark']);
+Route::post('api/organization/{id}/unremark', ['uses' => 'OrganizationController@unremark']);
 Route::get('api/organization/{id}/medias', ['uses' => 'OrganizationController@medias']);
 Route::get('api/activity/{id}/medias', ['uses' => 'ActivityController@medias']);
 
