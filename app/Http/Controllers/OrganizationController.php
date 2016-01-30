@@ -25,6 +25,8 @@ class OrganizationController extends Controller {
 
 	public function show($id) {
         $organization = Organization::find($id);
+        $organization->is_current = intval($organization->is_current);
+
         $organization->medias;
         return $organization;
 	}
