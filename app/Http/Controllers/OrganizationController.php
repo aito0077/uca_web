@@ -19,7 +19,7 @@ class OrganizationController extends Controller {
     }
 
 	public function index() {
-        $organizations = Organization::all();
+        $organizations = Organization::orderBy('id', 'desc')->get();
         foreach($organizations as $organization) {
             $organization->remark = intval($organization->remark);
         }
