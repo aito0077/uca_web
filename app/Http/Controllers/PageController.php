@@ -32,6 +32,7 @@ class PageController extends Controller {
 
         foreach($organizations as $organization) {
             $organization->is_current = intval($organization->is_current);
+            $organization->remark = intval($organization->remark);
         }
         $home->organizations = $organizations;
 
