@@ -50,7 +50,7 @@ body {
   font-size: 13px;
   line-height: 24px;
   font-family: "P22Underground", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #666;
+  color: #398f5d;
 }
 body.boxed-layout {
   background: #eee;
@@ -296,13 +296,13 @@ h1,
   line-height: 64px;
 }
 h1.large {
-  font-size: 72px;
+  font-size: 50.54pt;
   line-height: 80px;
   font-weight: 100;
 }
 @media all and (max-width: 990px) {
   h1.large {
-    font-size: 56px;
+    font-size: 50.54pt;
     line-height: 64px;
   }
 }
@@ -893,7 +893,7 @@ nav.bg-dark .logo-dark {
   width: auto;
 }
 .menu li a {
-  font-size: 11px;
+  font-size: 11pt;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;

@@ -2,7 +2,7 @@
 
 angular.module('config', [])
 
-.constant('api_host', 'http://uca.collab-dev.com')
+.constant('api_host', 'http://pabellonuca.com')
 
 .constant('instagram_token', '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b')
 

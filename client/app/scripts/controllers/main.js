@@ -427,6 +427,14 @@ angular.module('ucaApp')
         $scope.remark_muestras = [];
         $scope.unremark_muestras = [];
 
+        $scope.limit_remark = 2;
+        $scope.limit_normal = 8;
+
+        $scope.showMore = function() {
+            $scope.limit_remark = $scope.limit_remark + 2;
+            $scope.limit_normal = $scope.limit_remark * 4;
+        };
+
         $http.get(api_host+'/api/pages/home').success(function(page) {
             $scope.home = page;
 

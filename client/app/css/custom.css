@@ -97,11 +97,11 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: "P22-Book", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Demi", Helvetica, Arial, sans-serif!important;
 }
 
 .text-title-p22 {
-    font-family: "P22-Book", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Book", Helvetica, Arial, sans-serif!important;
 }
 
 section {
@@ -111,10 +111,11 @@ section {
     padding: 0px 0;
 }
 .text-paragraph {
-    font-family: "P22-Book", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-DemiItalic", Helvetica, Arial, sans-serif!important;
+    font-size: 30.54pt;
 }
 .text-bold {
-    font-family: "P22-Medium", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Medium", Helvetica, Arial, sans-serif!important;
     font-size: 17pt;
 }
 
@@ -129,7 +130,7 @@ section {
     height: 415px !important;
 }
 .text-novedades {
-    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Thin", Helvetica, Arial, sans-serif!important;
 }
 .rainbow:before {
         content: '';
@@ -190,23 +191,23 @@ section {
     height: 890px;
 }
 .row.information .info-title {
-    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Thin", Helvetica, Arial, sans-serif!important;
 }
 .row.information .info-paragraph {
-    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Thin", Helvetica, Arial, sans-serif!important;
     font-size: 10pt;
 }
 
 .row.information {
     padding-top: 80px;
-    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Thin", Helvetica, Arial, sans-serif!important;
     background-color: #dc6d1f;
     height: 445px;
     color: #ffffff;
 }
 
 #contacto  .address {
-    font-family: "P22-thin", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Thin", Helvetica, Arial, sans-serif!important;
     background-color: #ffffff;
     height: 445px;
 }
@@ -219,12 +220,12 @@ section {
   color: #162437 !important;
 }
 .menu li a {
-    font-family: "P22-Heavy", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Bold", Helvetica, Arial, sans-serif!important;
     font-size: 11;
     color: #FFF;
 }
 .title-footer {
-    font-family: "P22-Heavy", Helvetica, Arial, sans-serif!important;
+    font-family: "Neutra-Bold", Helvetica, Arial, sans-serif!important;
     font-size: 17pt;
     font-color: #ffffff;
     color: #fff;

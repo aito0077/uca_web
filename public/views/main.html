@@ -33,8 +33,8 @@
                     </div>
                 </div>
                 <div class="nav-bar uppercase sc-background-orange">
-                    <div class="module logo left text-brand" style="padding-left: 45px; padding-top: 10px; padding-bottom: 5px">
-                        <img src="img/logo_3.png" class="img-responsive" width="300px"/>
+                    <div class="module logo left text-brand" style="padding-left: 45px; padding-top: 15px; padding-bottom: 5px">
+                        <img src="img/logo_3.png" class="img-responsive" width="200px"/>
                     </div>
                     <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
                         <i class="ti-menu"></i>
@@ -87,8 +87,8 @@
                                 <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-center">
                                     <h2 class="mb0">{{muestra.name}}</h2>
                                 </div>
-                                <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 text-center">
-                                    <p class="text-center mb0 text-paragraph">
+                                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 text-center">
+                                    <p class="text-center mb0 text-paragraph" style="margin-top: 20px">
                                         {{muestra.slogan}}
                                     </p>
                                 </div>
@@ -100,7 +100,7 @@
                 </ul>
             </section>
 
-            <section class="ilite">
+            <section class="ilite" id="exhibicion">
                 <div class="container mt80">
                     <div class="row">
                         <div class="col-sm-12 text-center">
@@ -179,13 +179,13 @@
                 <!--end of container-->
             </section>
 
-           <section id="gallery-muestras" class="ilite mt0" style="margin: 0px; padding: 0px;">
+           <section id="galeria" class="ilite mt0" style="margin: 0px; padding: 0px;">
                 <div class="container-flex">
                     <div class="row masonry masonryFlyIn">
                         <div class="col-md-4" style="margin: 0px; padding: 0px;">
-                            <div class="image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in remark_muestras" style="margin: 0px; padding: 0px;">
-                                <a ng-href="{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
-                                    <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/300x300/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;" class="img-responsive"/>
+                            <div class="image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in remark_muestras |limitTo: limit_remark" style="margin: 0px; padding: 0px;">
+                                <a href="http://{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
+                                    <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/300x345/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;" class="img-responsive" height="345"/>
                                     <div class="title">
                                         <h5 class="muestra-thumb-title uppercase mb0">{{item_muestra.name}}</h5>
                                         <p class="muestra-thum-details">{{item_muestra.more_details}}</p>
@@ -194,9 +194,9 @@
                             </div>
                         </div>
                         <div class="col-md-8" style="margin: 0px; padding: 0px;">
-                            <div class="col-sm-6 image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in unremark_muestras" style="margin: 0px; padding: 0px;">
-                                <a ng-href="{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
-                                    <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/400x250/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;" class="img-responsive"/>
+                            <div class="col-sm-6 image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in unremark_muestras |limitTo: limit_normal" style="margin: 0px; padding: 0px;">
+                                <a href="http://{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
+                                    <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/400x230/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;" class="img-responsive" height="230"/>
                                     <div class="title">
                                         <h5 class="muestra-thumb-title uppercase mb0">{{item_muestra.name}}</h5>
                                         <p class="muestra-thum-details">{{item_muestra.more_details}}</p>
@@ -205,20 +205,6 @@
                             </div>
                         </div>
                     </div>
-
-                    
-
-                    <!--div class="row masonry masonryFlyIn ">
-                        <div class="col-sm-4 image-tile inner-title item-muestra hover-reveal text-center" ng-repeat="item_muestra in home.organizations" style="margin: 0px; padding: 0px;">
-                            <a ng-href="{{getMuestraLink(item_muestra)}}" target="_blank" style="margin: 0px; padding: 0px;">
-                                <img alt="{{item_muestra.name}}" ng-src="http://images.collab-dev.com/x300/smart/uca/{{item_muestra.main_picture}}"  style="margin: 0px; padding: 0px;"/>
-                                <div class="title">
-                                    <h5 class="muestra-thumb-title uppercase mb0">{{item_muestra.name}}</h5>
-                                    <p class="muestra-thum-details">{{item_muestra.more_details}}</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div-->
 
                 </div>
             </section>
@@ -272,7 +258,7 @@
 
 
 
-            <section class="p0">
+            <section class="p0" id="contacto">
                 <div class="map-holder pt180 pb180">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6826974889027!2d-58.36602088280991!3d-34.61218427990593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352a0053efe1%3A0xf289dbcc30ef33ca!2sAv.+Alicia+Moreau+de+Justo+1300%2C+C1107AFB+CABA!5e0!3m2!1ses!2sar!4v1435780990552" allowfullscreen></iframe>
                 </div>
