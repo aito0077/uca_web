@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ucaApp')
-.controller('MainCtrl', function ($scope, $timeout, $location, $http, $sce, api_host, Page) {
+.controller('MainCtrl', function ($scope, $timeout, $location, $http, $sce, api_host, Page, instagram_token, instagram_client_id) {
     $scope.mr_firstSectionHeight = 0;
     $scope.mr_nav = 0;
     $scope.mr_navOuterHeight = 0;
@@ -156,19 +156,24 @@ angular.module('ucaApp')
         });
 
         jQuery.fn.spectragram.accessData = {
-            accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
-            clientID: 'fedaafacf224447e8aef74872d3820a1'
+            accessToken: instagram_token,
+            clientID: instagram_client_id
         };
 
+        /*
         jQuery('.instafeed').each(function() {
             jQuery(this).children('ul').spectragram('getUserFeed', {
                 query: jQuery(this).attr('data-user-name'),
                 max: 12
             });
         });
+        */
+
+
         jQuery('.instafeedtag').each(function() {
-            jQuery(this).children('ul').spectragram('getRecentTagged', {
-                query: jQuery(this).attr('data-user-name'),
+            //jQuery(this).children('ul').spectragram('getRecentTagged', {
+            jQuery(this).children('ul').spectragram('getUserFeed', {
+                query: 'PabellonArteUca',
                 max: 12
             });
         });
@@ -269,6 +274,12 @@ angular.module('ucaApp')
 
         $scope.mr_firstSectionHeight = jQuery('.main-container section:nth-of-type(1)').outerHeight(true);
 
+        jQuery('.instafeed').each(function() {
+            jQuery(this).children('ul').spectragram('getUserFeed', {
+                query: $scope.home.instagram_username,
+                max: 12
+            });
+        });
 
     };
 
@@ -465,175 +476,6 @@ angular.module('ucaApp')
         };
 
     })
-    .controller('organization-controller', function ($scope, $timeout, $http, $routeParams, api_host, Organization, instagram_token, instagram_client_id) {
-
-            $scope.organization = {};
-            $scope.handleTweets = function(tweets) {
-                var x = tweets.length;
-                var n = 0;
-                var element = jQuery('.sec_twitter');
-                var html = '';
-                while (n < x) {
-                    html += '<p>' + tweets[n] + '</p>';
-                    n++;
-                }
-                html += '';
-                element.innerHTML = html;
-                return html;
-            };
-
-            $scope.medias = [];
-
-            Organization.get({
-                id: $routeParams.id
-            }, function(organization) {
-                $scope.organization = organization;
-                $scope.medias = _.filter($scope.organization.medias, function(media) {
-                    return media.name != $scope.organization.main_picture;
-                });
-
-                $scope.geopoints = _.filter($scope.organization.geopoints, function(geopoint) {
-                    return geopoint.location && geopoint.location.longitude && geopoint.location.latitude;
-                });
-
-                $timeout(function() {
-                    $scope.setup_components();
-                }, 1000);
-            });
-            
-            $scope.setup_components = function() {
-                jQuery('#carousel-organization').imagesLoaded().always( function() {
-                    window.loading_screen.finish(); 
-                });  
-
-
-                if($scope.organization.instagram_hashtag) {
-                    jQuery.fn.spectragram.accessData = {
-                        accessToken: instagram_token,
-                        clientID: instagram_client_id
-                    };
-
-                    jQuery('.organization-instafeedtag').each(function() {
-                jQuery(this).children('.grilla_instagram').spectragram('getRecentTagged', {
-                    query: $scope.organization.instagram_hashtag,
-                    max: 12,
-                    wrapEachWith: '<div class="col-sm-4"></div>'
-                });
-            });
-        }
-        if($scope.organization.twitter_hashtag) {
-            twitterFetcher.fetch({
-                id: $scope.organization.twitter_hashtag, 
-                domId: '', 
-                maxTweets: 5,
-                enableLinks: true,
-                showUser:true, 
-                showTime: true, 
-                dateFunction: '', 
-                showRetweet: false,
-                customCallback:  $scope.handleTweets
-            });
-        }
-        jQuery('#carouser-organization').carousel({
-            interval: 2000
-        })
-
-
-        var center_lat = 0,
-            center_lng = 0;
-
-        if($scope.geopoints.length > 0) {
-            _.each($scope.geopoints, function(geopoint) {
-                center_lat = parseFloat(center_lat) + parseFloat(geopoint.location.latitude);
-                center_lng = parseFloat(center_lng) + parseFloat(geopoint.location.longitude);
-            });
-            center_lat = parseFloat(center_lat) / parseFloat($scope.geopoints.length);
-            center_lng = parseFloat(center_lng) / parseFloat($scope.geopoints.length);
-
-        }
-
-        $scope.map = new google.maps.Map(document.getElementById('map'), {
-            center: {lng: center_lng, lat: center_lat},
-            zoom: 12
-        });
-
-        $scope.openWindow = function(infoWindow, marker) {
-            $scope.infoWindow = infoWindow;
-            $scope.infoWindow.open($scope.map, marker);
-        };
-
-        _.each($scope.geopoints, function(geopoint) {
-            var position = new google.maps.LatLng(geopoint.location.latitude, geopoint.location.longitude),
-            contentString = '<div id="content">'+
-                  '<div id="siteNotice"></div>'+
-                  '<div id="bodyContent">'+
-                  '<p>'+geopoint.description+'</p>'+
-                  '<p><b>'+geopoint.location.formatted_address+'</b></p>'+
-                  '</div>'+
-                  '</div>';
-            var infoWindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            var marker = new google.maps.Marker({
-                position: position,
-                map: $scope.map,
-                title: geopoint.description
-            });
-            marker.addListener('click', function() {
-                $scope.openWindow(infoWindow, marker);
-            });
-        });
-
-    };
-
-})
-.controller('activity-controller', function ($scope, $timeout, $http, $routeParams, api_host, Activity) {
-
-    $scope.activity = {};
-
-    $scope.medias = [];
-
-    Activity.get({
-        id: $routeParams.id
-    }, function(activity) {
-        $scope.activity = activity;
-        $scope.medias = _.filter($scope.activity.medias, function(media) {
-            return media.name != $scope.activity.main_picture;
-        });
-
-        window.loading_screen.finish(); 
-
-        $timeout(function() {
-            if($scope.activity.instagram_hashtag) {
-                jQuery('.activity-instafeedtag').each(function() {
-                    jQuery(this).children('.grilla_instagram').spectragram('getRecentTagged', {
-                        query: $scope.activity.instagram_hashtag,
-                        max: 12,
-                        wrapEachWith: '<div class="col-sm-4"></div>'
-                    });
-                });
-            }
-            if($scope.activity.twitter_hashtag) {
-                twitterFetcher.fetch({
-                    id: $scope.activity.twitter_hashtag, 
-                    domId: '', 
-                    maxTweets: 5,
-                    enableLinks: true,
-                    showUser:true, 
-                    showTime: true, 
-                    dateFunction: '', 
-                    showRetweet: false,
-                    customCallback:  $scope.handleTweets
-                });
-            }
-            jQuery('#carouser-activity').carousel({
-                interval: 2000
-            })
-        }, 1000);
-
-    });
-    
-})
 .controller('footer-controller', function ($scope, $http, $timeout, $sce, api_host, instagram_token, instagram_client_id) {
     $scope.home = {};
 
@@ -659,12 +501,6 @@ angular.module('ucaApp')
         jQuery('.instafeed').each(function() {
             jQuery(this).children('ul').spectragram('getUserFeed', {
                 query: $scope.home.instagram_username,
-                max: 12
-            });
-        });
-        jQuery('.instafeedtag').each(function() {
-            jQuery(this).children('ul').spectragram('getRecentTagged', {
-                query: jQuery(this).attr('data-user-name'),
                 max: 12
             });
         });

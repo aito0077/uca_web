@@ -271,3 +271,8 @@ section {
 .nav-bar .module.logo {
     height: auto;
 }
+
+.tweet a {
+    color: #162437;
+}
+    
