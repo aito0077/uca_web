@@ -174,7 +174,7 @@ angular.module('ucaApp')
             //jQuery(this).children('ul').spectragram('getRecentTagged', {
             jQuery(this).children('ul').spectragram('getUserFeed', {
                 query: 'PabellonArteUca',
-                max: 12
+                max: 8 
             });
         });
 
