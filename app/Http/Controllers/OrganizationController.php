@@ -53,7 +53,11 @@ class OrganizationController extends Controller {
             $organization->description = $request->input('description');
             $organization->slogan = $request->input('slogan');
             $organization->is_current = $request->has('is_current') ? $request->input('is_current') : false;
-            $organization->remark = $request->input('remark');
+		if($request->has('remark')) {
+		    $organization->remark = $request->input('remark');
+		} else {
+		    $organization->remark = 0;
+		}
             $organization->main_picture = $request->input('main_picture');
             $organization->details = $request->input('details');
             $organization->more_details = $request->input('more_details');
