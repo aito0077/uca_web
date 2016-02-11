@@ -154,7 +154,10 @@ section {
     border-bottom-color: #5db49b !important;
 }
 #contacto {
-    height: 890px !important;
+    height: 445px !important;
+}
+#contacto-sm {
+    height: 445px !important;
 }
 .image-square .image {
   height: 890px !important;
@@ -188,7 +191,11 @@ section {
 
 #contacto  .map-holder{
     background-color: #12100f;
-    height: 890px;
+    height: 445px;
+}
+#contacto-sm  .map-holder{
+    background-color: #12100f;
+    height: 445px;
 }
 .row.information .info-title {
     font-family: "Neutra-Thin", Helvetica, Arial, sans-serif!important;
@@ -233,7 +240,7 @@ section {
 #novedades {
     min-height: 700px;
 }
-section.ilite {
+.ilite {
     background-color: #5db49b;
     color: #fff;
 }

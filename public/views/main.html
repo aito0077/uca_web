@@ -85,11 +85,21 @@
                         <div class="container v-align-transform">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 text-center">
-                                    <h2 class="mb0" style="letter-spacing: 100%;">{{muestra.name}}</h2>
+                                    <h2 class="mb0" style="letter-spacing: 3px">{{muestra.name}}</h2>
                                 </div>
                                 <div class="col-sm-12 col-md-8 col-md-offset-2 text-center">
-                                    <p class="text-center mb0 text-paragraph" style="font-size: 30px; margin-top: 20px;letter-spacing: 100%;">
+                                    <p class="text-center mb0 text-paragraph" style="font-size: 30px; margin-top: 20px;letter-spacing: 2px;">
                                         {{muestra.slogan}}
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-md-offset-3 text-center hidden-sm hidden-xs">
+                                    <p class="text-center mb0 text-paragraph" style="font-size: 12px; margin-top: 20px; line-height: 1">
+                                        {{muestra.description}}
+                                    </p>
+                                </div>
+                                <div class="col-sm-12 col-md-8 col-md-offset-2 text-center" ng-if="muestra.start_event_date">
+                                    <p class="text-center mb0 text-paragraph" style="font-size: 20px; margin-top: 60px;letter-spacing: 2px;">
+                                        Apartir del {{muestra.start_event_date |moment: 'DD [de] MMMM [del] YYYY'}}
                                     </p>
                                 </div>
                             </div>
@@ -280,11 +290,112 @@
 
 
 
-            <section class="p0" id="contacto">
-                <div class="map-holder pt180 pb180">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6826974889027!2d-58.36602088280991!3d-34.61218427990593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352a0053efe1%3A0xf289dbcc30ef33ca!2sAv.+Alicia+Moreau+de+Justo+1300%2C+C1107AFB+CABA!5e0!3m2!1ses!2sar!4v1435780990552" allowfullscreen></iframe>
+            <!--
+            <section class="p0" id="contacto_dis">
+                <img src="/img/mapa.png" class="img-responsive" width="100%" height="450px"> 
+            </section>
+            <section class="p0" id="contacto_mapa" style="background: url('/img/mapa.png') no-repeat center center; background-size: cover; width: 100%; min-height: 450px ">
+            </section>
+            -->
+
+            <section id="contacto-sm" class="p0 visible-xs visible-sm hidden-md hidden-lg container-flex">
+                    
+                <div class="row col-sm-12 col-xs-12">
+                    <div class="col-sm-12 col-xs-12 p0">
+                        <div id="google_map" class="map-holder">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6826974889027!2d-58.36602088280991!3d-34.61218427990593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352a0053efe1%3A0xf289dbcc30ef33ca!2sAv.+Alicia+Moreau+de+Justo+1300%2C+C1107AFB+CABA!5e0!3m2!1ses!2sar!4v1435780990552" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <section class="p0 ilite visible-xs visible-sm hidden-md hidden-lg container-flex">
+                 <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text-center">
+
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3 p0">
+                                <image src="/img/logo_1.png" class="img-responsive block-center">
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-sm-8 col-sm-offset-2 p0">
+                                <p class="mb0 text-paragraph" style="font-size: 12px; margin-top: 20px; line-height: 1">
+                                    Abierto de Martes a Domingo de 11.00 a 19.00 hs.<br/>
+                                    Entrada libre y gratuita.
+                                </p>
+
+                            </div>
+                            <div class="col-sm-8 col-sm-offset-2 p0" style="margin-top: 20px">
+                                <hr>
+                            </div>
+                            <div class="col-sm-8 col-sm-offset-2 p0">
+                                <p class="text-paragraph" style="font-size: 12px; margin-top: 20px; line-height: 1">
+                                    Av. Alicia Moreau de Justo 1300.<br/>
+                                    Puerto Madero. CABA.<br/>
+                                    Argentina
+                                </p>
+                            </div>
+                            <div class="col-sm-8 col-sm-offset-2 p0">
+                                <p class="text-paragraph" style="font-size: 12px; line-height: 1">
+                                    E: pabellon.artes.uca@gmail.com <br/>
+                                    P: +549 11 4349 0200
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="p0 visible-md visible-lg hidden-sm hidden-xs" id="contacto">
+                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                    <div id="over_map" class="ilite container-flex">
+
+                        <div class="row" style="margin-top: 40px;">
+                            <div class="col-md-6 col-md-offset-2 p0">
+                                <image src="/img/logo_1.png" class="img-responsive">
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col-md-8 col-md-offset-2 p0">
+                                <p class="mb0 text-paragraph" style="font-size: 12px; margin-top: 20px; line-height: 1">
+                                    Abierto de Martes a Domingo de 11.00 a 19.00 hs.<br/>
+                                    Entrada libre y gratuita.
+                                </p>
+
+                            </div>
+                            <div class="col-md-8 col-md-offset-2 p0" style="margin-top: 20px">
+                                <hr>
+                            </div>
+                            <div class="col-md-8 col-md-offset-2 p0">
+                                <p class="text-paragraph" style="font-size: 12px; margin-top: 20px; line-height: 1">
+                                    Av. Alicia Moreau de Justo 1300.<br/>
+                                    Puerto Madero. CABA.<br/>
+                                    Argentina
+                                </p>
+                            </div>
+                            <div class="col-md-8 col-md-offset-2 p0">
+                                <p class="text-paragraph" style="font-size: 12px; line-height: 1">
+                                    E: pabellon.artes.uca@gmail.com <br/>
+                                    P: +549 11 4349 0200
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="google_map" class="map-holder pt200 pb160">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6826974889027!2d-58.36602088280991!3d-34.61218427990593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352a0053efe1%3A0xf289dbcc30ef33ca!2sAv.+Alicia+Moreau+de+Justo+1300%2C+C1107AFB+CABA!5e0!3m2!1ses!2sar!4v1435780990552" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+<style>
+   #contacto { position: relative; }
+   #_over_map { position: absolute; top: 50px; left: 100px; z-index: 99; }
+   #over_map { position: absolute; top: 5%; left: 5%; z-index: 99; width: 350px; height: 350px; }
+</style>
 
             <footer class="footer-1 bg-dark" ng-controller="footer-controller">
                 <div class="container">
